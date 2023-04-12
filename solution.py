@@ -7,6 +7,5 @@ alpha = 0.06
 
 
 def solution(x, y) -> bool:
-    # Проверяем равенство дисперсий выборок
     p_value = ttest_ind(x, y).pvalue
     return p_value < alpha
