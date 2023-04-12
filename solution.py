@@ -7,5 +7,5 @@ alpha = 0.06
 
 
 def solution(x, y) -> bool:
-    p_value = ttest_ind(x, y).pvalue
+    p_value = ttest_ind(x, y, alternative="greater").pvalue
     return p_value < alpha
