@@ -8,11 +8,5 @@ alpha = 0.06
 
 def solution(x, y) -> bool:
     # Проверяем равенство дисперсий выборок
-    var_x = np.var(x)
-    var_y = np.var(y)
-
-    # Выполняем t-тест
-    t_stat, p_val = ttest_ind(x, y, equal_var=var_x == var_y)
-
-    # Сравниваем p-значение с уровнем значимости
-    return p_val < alpha  # Не отклоняем нулевую гипотезу
+    p_value = ttest_ind(x, y).pvalue
+    return p_value < alpha
